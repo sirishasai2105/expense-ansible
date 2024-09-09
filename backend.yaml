@@ -2,7 +2,7 @@
   hosts: backend
   become: yes
   vars:
-    login_host: backend.reyanshsai.online
+    login_host: mysql.reyanshsai.online
     login_password: ExpenseApp@1
   tasks:
     - name: Disabling node js
