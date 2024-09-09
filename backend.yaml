@@ -49,7 +49,7 @@
         name:
           - PyMySQL
           - cryptography
-        executbale: 3.9
+        executbale: pip3.9
 
     - name: copy backend service
       ansible.builtin.copy:
