@@ -23,5 +23,3 @@
         login_host: "{{ login_host }}"
       ignore_errors: true
       register mysql_info
-
-    
