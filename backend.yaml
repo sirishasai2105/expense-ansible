@@ -36,15 +36,15 @@
         dest: /app
         remote_src: yes
 
-#     - name: installing the dependancies
-#       ansible.builtin.command: npm install
-#       args:
-#         chdir: /app
+    - name: installing the dependancies
+      ansible.builtin.command: npm install
+      args:
+        chdir: /app
 
-#     - name: copy backend service
-#       ansible.builtin.copy:
-#         src: backend.service
-#         dest: /etc/systemd/system/backend.service
+    - name: copy backend service
+      ansible.builtin.copy:
+        src: backend.service
+        dest: /etc/systemd/system/backend.service
 
 
 # - name: configure backend server
