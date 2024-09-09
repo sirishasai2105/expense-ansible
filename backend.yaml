@@ -44,6 +44,13 @@
       args:
         chdir: /app
 
+    - name: ansible to install PyMySQL
+      ansible.builtin.pip:
+        name:
+          - PyMySQL
+          - cryptography
+        executbale: 3.9
+
     - name: copy backend service
       ansible.builtin.copy:
         src: backend.service
