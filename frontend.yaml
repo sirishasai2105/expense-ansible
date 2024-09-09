@@ -37,4 +37,4 @@
   - name: connect to the conf service
     ansible.builtin.copy:
       src: expense.conf
-      dest: etc/nginx/default.d/expense.conf
+      dest: /etc/nginx/default.d/expense.conf
