@@ -30,11 +30,11 @@
 
 
 
-#     - name: extracting the downloaded file
-#       ansible.builtin.unarchive:
-#         src: /tmp/backend.zip
-#         dest: /app
-#         remote_src: yes
+    - name: extracting the downloaded file
+      ansible.builtin.unarchive:
+        src: /tmp/backend.zip
+        dest: /app
+        remote_src: yes
 
 #     - name: installing the dependancies
 #       ansible.builtin.command: npm install
