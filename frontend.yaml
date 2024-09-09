@@ -49,11 +49,11 @@
       name: nginx
       state: installed
 
-  # - name: start nginx server
-  #   ansible.builtin.service:
-  #     name: nginx
-  #     state: started
-  #     enabled: yes
+  - name: start nginx server
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
 
   - name: remove the default content
     ansible.builtin.file:
