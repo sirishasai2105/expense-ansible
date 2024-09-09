@@ -28,3 +28,8 @@
       src: /tmp/frontend.zip
       dest:  /usr/share/nginx/html
       remote_src: yes
+
+  - name: connect to the conf service
+    ansible.builtin.copy:
+      src: expense.conf
+      dest: etc/nginx/default.d/expense.conf
