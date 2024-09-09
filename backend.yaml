@@ -44,12 +44,6 @@
       args:
         chdir: /app
 
-    # - name: ansible to install PyMySQL
-    #   ansible.builtin.pip:
-    #     name:
-    #       - PyMySQL
-    #       - cryptography
-    #     executbale: pip3.9
 
     - name: copy backend service
       ansible.builtin.copy:
@@ -71,6 +65,13 @@
         target: /app/schema/backend.sql
         state: import
         name: all
+
+    - name: daemon reload 
+      ansible.builtin.systemd_service:
+        name: backend
+        daemon_reload: true
+        state: restared
+
 # - name: configure backend server
 #   hosts: backend
 #   become: yes
