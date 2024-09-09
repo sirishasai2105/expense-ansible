@@ -1,6 +1,9 @@
 - name: configuring backend
   hosts: backend
   become: yes
+  vars:
+    login_host: mysql.reyanshsai.online
+    login_password: ExpenseApp@1
   tasks:
     - name: Disabling node js
       ansible.builtin.command: dnf module disable nodejs -y
@@ -46,7 +49,14 @@
         src: backend.service
         dest: /etc/systemd/system/backend.service
 
-
+    - name: connecting to mysql
+      community.mysql.mysql_db:
+        login_host: "{{ login_host }}"
+        login_password: "{{ login_password }}"
+        login_user: root
+        target: /app/schema/backend.sql
+        state: import
+        name: all
 # - name: configure backend server
 #   hosts: backend
 #   become: yes
