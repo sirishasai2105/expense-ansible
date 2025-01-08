@@ -16,12 +16,10 @@
         name: nodejs
         state: installed
 
-    - name: install mysql
+    - name: install mysql76
       ansible.builtin.package:
         name: mysql
         state: installed
-
-
 
     - name: adding the expense user
       ansible.builtin.user:
